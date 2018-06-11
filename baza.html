@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <link rel="Stylesheet" type="text/css" href="baza.css" />
+    <script type="text/javascript" src="baza.js"></script>
+    
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            Imię
+            <input id="name" type="text" name="imie">
+            </br>
+            Nazwisko
+            <input id="lastname" type="text" name="nazwisko">
+            </br>
+            Wiek
+            <input id="age" type="number" name="wiek">
+            </br>
+            Płeć
+            <select id="gender">
+                <option value="Kobieta">Kobieta</option>
+                <option value="Mezczyzna">Mezczyzna</option>
+
+            </select>
+            </br>
+            <input id="but" type="button" value="Zapisz" onclick="add()">
+            </br>
+
+        </form>
+    </div>
+
+    <table id="tab" style="border: solid 1px black">
+        <tr>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Wiek</th>
+            <th>Płeć</th>
+            <th>Usuń</th>
+            <th>Edytuj</th>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

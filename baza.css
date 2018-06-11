@@ -1,0 +1,58 @@
+.container{
+    border: solid 0.7px black;
+    padding: 20px;
+    width: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:10px;
+    margin-bottom: 25px;
+
+}
+
+input {
+    border-radius:5px;
+    margin:5px;
+    height:30px;
+}
+#but{
+    margin-top:20px;
+    margin-left:80px;
+    border-radius:0;
+    height:40px;
+    width: 80px;
+
+}
+select {
+    height: 30px;
+    margin:10px;
+}
+
+#tab {
+    margin:10px;
+    width: 900px;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+th, td {
+    height:30px;
+    
+}
+#tab, th, td {
+    border: 1px solid black;
+}
+
+td{
+    padding:5px;
+    background: rgb(245, 244, 244);
+   
+}
+
+th{
+    background: lightgrey;
+}
+
+#changedname, #changedlast, #changedage{
+    border-radius:0px;
+    margin:10px;
+}
