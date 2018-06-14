@@ -1,58 +1,70 @@
-.container{
-    border: solid 0.7px black;
+.formularz{
+    border: solid 0.9px grey;
     padding: 20px;
-    width: 250px;
+    width: 350px;
     font-family: Arial, Helvetica, sans-serif;
     margin:10px;
+    margin-right: 200px;
     margin-bottom: 25px;
+    border-radius: 4%;
+    float:right;
 
 }
 
 input {
-    border-radius:5px;
-    margin:5px;
+    
+    margin:8px;
     height:30px;
 }
 #but{
     margin-top:20px;
-    margin-left:80px;
-    border-radius:0;
+    margin-left:230px;
     height:40px;
     width: 80px;
+    margin-right:20px;
 
 }
-select {
+#gender {
     height: 30px;
-    margin:10px;
+    margin:15px;
+}
+#result{
+    width:200px;
+    height:300px;
+
+}
+#search{
+
+    margin-right: 5%;
+    margin-left:10px;
+    margin-top:10px;
+}
+#searchbox{
+    width: 550px;
+    float: left;
+    margin-left: 20px;
+    margin-top:10px;
+    height: 37.5px;
+   
+    
+}
+#name, #lastname, #age{
+    height:37.5px;
+    border-radius: 4px;
+    width:250px;
 }
 
 #tab {
     margin:10px;
-    width: 900px;
+    width: auto;
     border-collapse: collapse;
     font-family: Arial, Helvetica, sans-serif;
 
 }
 
-th, td {
-    height:30px;
-    
-}
-#tab, th, td {
-    border: 1px solid black;
-}
-
-td{
-    padding:5px;
-    background: rgb(245, 244, 244);
-   
-}
-
-th{
-    background: lightgrey;
-}
 
 #changedname, #changedlast, #changedage{
     border-radius:0px;
     margin:10px;
 }
+

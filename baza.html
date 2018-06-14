@@ -2,22 +2,33 @@
 
 <head>
     <link rel="Stylesheet" type="text/css" href="baza.css" />
-    <script type="text/javascript" src="bazaclass.js"></script>
+    <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="customer.js"></script>
-    
+    <script type="text/javascript" src="search.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
-    <div class="container">
+    <button type="button" id="search" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Szukaj
+    </button>
+    <input id="searchbox" placeholder="Wyszukaj" onkeydown = "if (event.keyCode == 13)
+    document.getElementById('search').click()">
+
+    <div class="formularz">
         <form>
-            Imię
-            <input id="name" type="text" name="imie">
+            Imię</br>
+            <textarea id="name" type="text" name="imie"></textarea>
             </br>
-            Nazwisko
-            <input id="lastname" type="text" name="nazwisko">
+            Nazwisko</br>
+            <textarea id="lastname" type="text" name="nazwisko"></textarea>
             </br>
-            Wiek
-            <input id="age" type="number" name="wiek">
+            Wiek</br>
+            <textarea id="age" type="number" name="wiek"></textarea>
             </br>
             Płeć
             <select id="gender">
@@ -26,22 +37,56 @@
 
             </select>
             </br>
-            <input id="but" type="button" value="Zapisz" onclick="add()">
+            <input id="but" class="btn btn-primary" type="button" value="Zapisz">
             </br>
 
         </form>
     </div>
 
-    <table id="tab" style="border: solid 1px black">
-        <tr>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Wyniki wyszukiwania</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div id="resultbody" class="modal-body" onkeydown = "if (event.keyCode == 13)
+                document.getElementById('close').click()">
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" id="close" class="btn btn-success" data-dismiss="modal">Zamknij</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <table id="tab" class="table table-bordered">
+        <thead>
+
             <th>Imię</th>
             <th>Nazwisko</th>
             <th>Wiek</th>
             <th>Płeć</th>
             <th>Usuń</th>
             <th>Edytuj</th>
-        </tr>
+            <th>Zapisz</th>
 
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
     </table>
 
 </body>

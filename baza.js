@@ -94,8 +94,8 @@
                     btnEdit.innerText = "Edytuj";
                     btnEdit.onclick = edit;
                     var row = event.target.id;
-                    //document.getElementById(nrwiersza).innerText = editedCustomer;
                     data.splice(row-2, 1, editedCustomer);
+                    data[row-2].id = row;
                 }
 
             }
