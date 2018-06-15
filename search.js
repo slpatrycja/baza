@@ -22,6 +22,25 @@ function search() {
     };
 
 }
+function SortById(){
+
+    var A = customersRepository.get();
+        for(i=0;i<A.length;i++){
+            for(j=i+1;j<A.length;j++){
+            
+            if(A[i].id > A[j].id){
+                var temp = A[i];
+                A[i] = A[j];
+                A[j] = temp;
+            }
+        }  
+        }
+        var table = document.getElementById("tbody");
+        table.innerHTML = "";
+        customersRepository.replace(A);
+        
+        Main('load',);
+    }
 function SortByName(){
 
     var A = customersRepository.get();

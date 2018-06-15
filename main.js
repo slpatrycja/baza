@@ -3,6 +3,7 @@ function Main() {
     document.getElementById("search").onclick = search;
     document.getElementById("SortByNameButton").onclick = SortByName;
     document.getElementById("SortByLastNameButton").onclick = SortByLastName;
+    document.getElementById("SortByIdButton").onclick = SortById;
     var loadId;
     var addId = -1;
     document.getElementById("but").onclick = add;
@@ -14,7 +15,7 @@ function Main() {
     function clearTable(){
         table.innerHTML = ""; 
     }
-    function makeRow(imie, nazwisko, wiek, plec, del, edit, save) {
+    function makeRow(id, imie, nazwisko, wiek, plec, del, edit, save) {
         var row = table.insertRow();
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
@@ -23,13 +24,17 @@ function Main() {
         var cell5 = row.insertCell(4);
         var cell6 = row.insertCell(5);
         var cell7 = row.insertCell(6);
-        cell1.appendChild(imie);
-        cell2.appendChild(nazwisko);
-        cell3.appendChild(wiek);
-        cell4.appendChild(plec);
-        cell5.appendChild(del);
-        cell6.appendChild(edit);
-        cell7.appendChild(save);
+        var cell8 = row.insertCell(7);
+
+        cell1.appendChild(id);
+        cell2.appendChild(imie);
+        cell3.appendChild(nazwisko);
+        cell4.appendChild(wiek);
+        cell5.appendChild(plec);
+        cell6.appendChild(del);
+        cell7.appendChild(edit);
+        cell8.appendChild(save);
+        
     }
 
     function clearInputs() {
@@ -102,12 +107,13 @@ function Main() {
                 btnEdit.setAttribute("class", "btn btn-warning");
                 btnEdit.onclick = edit;
 
+                var id = document.createTextNode(tabObj[i].id);
                 var imie = document.createTextNode(tabObj[i].imie);
                 var nazwisko = document.createTextNode(tabObj[i].nazwisko);
                 var wiek = document.createTextNode(tabObj[i].wiek);
                 var plec = document.createTextNode(tabObj[i].plec);
             
-                makeRow(imie, nazwisko, wiek, plec, btnDel, btnEdit, btnSave);
+                makeRow(id, imie, nazwisko, wiek, plec, btnDel, btnEdit, btnSave);
             }
             addId = tabObj[tabObj.length - 1].id;
             return addId;
@@ -149,8 +155,9 @@ function Main() {
         var nazwisko = document.createTextNode(customer.nazwisko);
         var wiek = document.createTextNode(customer.wiek);
         var plec = document.createTextNode(customer.plec);
+        var id = document.createTextNode(customer.id);
 
-        makeRow(imie, nazwisko, wiek, plec, btnDel, btnEdit, btnSave);
+        makeRow(id, imie, nazwisko, wiek, plec, btnDel, btnEdit, btnSave);
         clearInputs();
         customersRepository.add(customer);
         return addId;
