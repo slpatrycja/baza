@@ -12,6 +12,10 @@ function search() {
         if ((data[i].nazwisko).toLowerCase().includes(toCompare) == true) {
             tempTab.push(data[i]);
         }
+
+        else if ((data[i].imie).toLowerCase().includes(toCompare) == true) {
+                    tempTab.push(data[i]);
+        }
     }
     for (j = 0; j < tempTab.length; j++) {
         document.getElementById("resultbody").innerText += (j + 1) + '. ' + tempTab[j].imie + ' ' + tempTab[j].nazwisko + ', ' + tempTab[j].wiek + ' lat' + '\n';
@@ -41,6 +45,7 @@ function SortById(){
         
         Main('load',);
     }
+
 function SortByName(){
 
     var A = customersRepository.get();
