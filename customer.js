@@ -56,5 +56,14 @@ class CustomersRepository {
         var keyValue = "Customers"; 
         localStorage.setItem(keyValue, JSON.stringify(data));
     }
+
+    replace(ar){
+        var data = this.get();
+        data = [];
+        data = ar.splice(0);
+        
+        var keyValue = "Customers"; 
+        localStorage.setItem(keyValue, JSON.stringify(data));
+    }
     
 }

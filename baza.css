@@ -24,6 +24,18 @@ input {
     margin-right:20px;
 
 }
+
+#SortByNameButton, #SortByLastNameButton {
+    width:30px;
+    height: 30px;
+    font-size:20px;
+    padding:0;
+    margin:0;
+    background-color: rgb(178, 226, 226);
+    color:black;
+    border-color:transparent;
+   
+}
 #gender {
     height: 30px;
     margin:15px;

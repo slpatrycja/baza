@@ -1,8 +1,8 @@
 
 
-
-document.getElementById("search").onclick = search;
+var customersRepository = new CustomersRepository();
 function search() {
+    
     document.getElementById("resultbody").innerText = "";
     var tempTab = [];
     var text = document.getElementById("searchbox").value;
@@ -21,6 +21,44 @@ function search() {
         document.getElementById("resultbody").innerText = "";
     };
 
-
-
 }
+function SortByName(){
+
+    var A = customersRepository.get();
+        for(i=0;i<A.length;i++){
+            for(j=i+1;j<A.length;j++){
+            
+            if(A[i].imie.toLowerCase() > A[j].imie.toLowerCase()){
+                var temp = A[i];
+                A[i] = A[j];
+                A[j] = temp;
+            }
+        }  
+        }
+        var table = document.getElementById("tbody");
+        table.innerHTML = "";
+        customersRepository.replace(A);
+        
+        Main('load',);
+    }
+
+function SortByLastName(){
+
+    var A = customersRepository.get();
+        for(i=0;i<A.length;i++){
+            for(j=i+1;j<A.length;j++){
+            
+            if(A[i].nazwisko.toLowerCase() > A[j].nazwisko.toLowerCase()){
+                var temp = A[i];
+                A[i] = A[j];
+                A[j] = temp;
+            }
+        }  
+        }
+        var table = document.getElementById("tbody");
+        table.innerHTML = "";
+        customersRepository.replace(A);
+        
+        Main('load',);
+    }
+

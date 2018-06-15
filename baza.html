@@ -13,12 +13,13 @@
 </head>
 
 <body>
+        
     <button type="button" id="search" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
         Szukaj
     </button>
     <input id="searchbox" placeholder="Wyszukaj" onkeydown = "if (event.keyCode == 13)
     document.getElementById('search').click()">
-
+    
     <div class="formularz">
         <form>
             Imię</br>
@@ -75,8 +76,8 @@
     <table id="tab" class="table table-bordered">
         <thead>
 
-            <th>Imię</th>
-            <th>Nazwisko</th>
+            <th>Imię   <button class="btn btn-primary" type="button" id="SortByNameButton">&#8650;</button></th>
+            <th>Nazwisko <button  class="btn btn-primary" type="button" id="SortByLastNameButton">&#8650;</button></th>
             <th>Wiek</th>
             <th>Płeć</th>
             <th>Usuń</th>

@@ -1,5 +1,8 @@
 window.onload = Main;
 function Main() {
+    document.getElementById("search").onclick = search;
+    document.getElementById("SortByNameButton").onclick = SortByName;
+    document.getElementById("SortByLastNameButton").onclick = SortByLastName;
     var loadId;
     var addId = -1;
     document.getElementById("but").onclick = add;
@@ -8,7 +11,9 @@ function Main() {
     var customersRepository = new CustomersRepository();
 
     load();
-
+    function clearTable(){
+        table.innerHTML = ""; 
+    }
     function makeRow(imie, nazwisko, wiek, plec, del, edit, save) {
         var row = table.insertRow();
         var cell1 = row.insertCell(0);
@@ -158,29 +163,8 @@ function Main() {
 
     }
 
-    document.getElementById("search").onclick = search;
+   
 
 
-    function search() {
-        document.getElementById("resultbody").innerText = "";
-        var tempTab = [];
-        var text = document.getElementById("searchbox").value;
-        var toCompare = text.toLowerCase();
-        var data = customersRepository.get();
-        for (i = 0; i < data.length; i++) {
-            if ((data[i].nazwisko).toLowerCase().includes(toCompare) == true) {
-                tempTab.push(data[i]);
-            }
-        }
-        for (j = 0; j < tempTab.length; j++) {
-            document.getElementById("resultbody").innerText += (j + 1) + '. ' + tempTab[j].imie + ' ' + tempTab[j].nazwisko + ', ' + tempTab[j].wiek + ' lat' + '\n';
-        }
-        document.getElementById("searchbox").value = "";
-        document.getElementById("close").onclick = function () {
-            document.getElementById("resultbody").innerText = "";
-        };
-
-
-
-    }
+   
 }
