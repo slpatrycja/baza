@@ -5,6 +5,8 @@
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="customer.js"></script>
     <script type="text/javascript" src="search.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="toggle.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
@@ -29,7 +31,7 @@
             <textarea id="lastname" type="text" name="nazwisko"></textarea>
             </br>
             Wiek</br>
-            <textarea id="age" type="number" name="wiek"></textarea>
+            <input id="age" type="number" name="wiek"></input>
             </br>
             Płeć
             <select id="gender">
@@ -72,7 +74,7 @@
     </div>
 
 
-
+    <button id="toggleMe" class="btn btn-success">Pokaż/Ukryj tabelę</button>
     <table id="tab" class="table table-bordered">
         <thead>
             <th>Id <button class="btn btn-primary" type="button" id="SortByIdButton">&#8650;</button></th>

@@ -4,7 +4,7 @@
     width: 350px;
     font-family: Arial, Helvetica, sans-serif;
     margin:10px;
-    margin-right: 200px;
+    margin-right: 100px;
     margin-bottom: 25px;
     border-radius: 4%;
     float:right;
@@ -64,6 +64,14 @@ input {
     height:37.5px;
     border-radius: 4px;
     width:250px;
+    box-shadow: none;
+}
+
+#age{
+    border-width: 1px;
+    border-top-color: rgb(240, 240, 240);
+    border-right-color: rgba(148, 148, 148, 0.952);
+    border-bottom-color: rgba(148, 148, 148, 0.952);
 }
 
 #tab {
@@ -71,12 +79,24 @@ input {
     width: auto;
     border-collapse: collapse;
     font-family: Arial, Helvetica, sans-serif;
-
+    display:none;
 }
 
 
 #changedname, #changedlast, #changedage{
     border-radius:0px;
     margin:10px;
+}
+
+#toggleMe {
+    background-color: rgb(230, 169, 179);
+    border: rgb(230, 169, 179);
+    width: 150px;
+    margin:10px;
+    margin-left:200px;
+}
+
+#toggleMe:focus {
+    box-shadow: none;
 }
 
