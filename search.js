@@ -1,4 +1,4 @@
-
+ 
 
 var customersRepository = new CustomersRepository();
 function search() {
@@ -17,8 +17,14 @@ function search() {
                     tempTab.push(data[i]);
         }
     }
+
     for (j = 0; j < tempTab.length; j++) {
-        document.getElementById("resultbody").innerText += (j + 1) + '. ' + tempTab[j].imie + ' ' + tempTab[j].nazwisko + ', ' + tempTab[j].wiek + ' lat' + '\n';
+        if(tempTab[j].wiek == '')
+             document.getElementById("resultbody").innerText += (j + 1) + '. ' + tempTab[j].imie + ' ' + tempTab[j].nazwisko +  '\n';
+
+        else 
+            document.getElementById("resultbody").innerText += (j + 1) + '. ' + tempTab[j].imie + ' ' + tempTab[j].nazwisko + ', ' + tempTab[j].wiek + ' lat' + '\n';
+        
     }
     
     document.getElementById("close").onclick = function () {
