@@ -1,9 +1,11 @@
 $("document").ready(function(){
+    $("#pageNumber, #pageBack, #pageNext").hide();
+    $("#showTable").on("click", ShowTable);
 
-    $("#toggleMe").on("click",TableFunction);
-
-    function TableFunction(){
+    function ShowTable(){
         $("#tab").toggle("fast","linear");
+        $("#pageNumber, #pageBack, #pageNext").toggle();
         
     }
+
 });

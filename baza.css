@@ -1,4 +1,9 @@
-.formularz{
+body {
+    background-color: grey;
+}
+
+.form{
+
     border: solid 0.9px grey;
     padding: 20px;
     width: 350px;
@@ -8,6 +13,7 @@
     margin-bottom: 25px;
     border-radius: 4%;
     float:right;
+    display: none;
 
 }
 
@@ -24,6 +30,31 @@ input {
     margin-right:20px;
 
 }
+
+.saveEdited {
+    color: #333;
+    background-color: #fff;
+    border-color: rgb(134, 132, 132);
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border-radius: 4px;
+    
+}
+
 
 #SortByNameButton, #SortByLastNameButton, #SortByIdButton {
     width:30px;
@@ -45,21 +76,10 @@ input {
     height:300px;
 
 }
-#search{
+#searchbox, #search{
+ margin-top:10px;
+}
 
-    margin-right: 5%;
-    margin-left:10px;
-    margin-top:10px;
-}
-#searchbox{
-    width: 550px;
-    float: left;
-    margin-left: 20px;
-    margin-top:10px;
-    height: 37.5px;
-   
-    
-}
 #name, #lastname, #age{
     height:37.5px;
     border-radius: 4px;
@@ -75,11 +95,13 @@ input {
 }
 
 #tab {
-    margin:10px;
-    width: auto;
+    margin:3px;
+    width: 605px;
     border-collapse: collapse;
     font-family: Arial, Helvetica, sans-serif;
     display:none;
+    background: white;
+    border-radius:15px;
 }
 
 
@@ -88,15 +110,26 @@ input {
     margin:10px;
 }
 
-#toggleMe {
-    background-color: rgb(230, 169, 179);
-    border: rgb(230, 169, 179);
-    width: 150px;
-    margin:10px;
-    margin-left:200px;
-}
 
-#toggleMe:focus {
+#showTable:focus {
     box-shadow: none;
 }
+#pageBack{
+    margin-left:490px;
+}
+#pageNumber{
+    width:26px;
+    height:26px;
+}
 
+#left{
+    float:left;
+    margin-left:20px;
+    position: fixed;
+}
+
+#ad{
+    float: right;
+    margin-right:70px;
+    margin-top:50px;
+}

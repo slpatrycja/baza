@@ -7,48 +7,84 @@
     <script type="text/javascript" src="search.js"></script>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="toggle.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
-<body>
-        
-    <button type="button" id="search" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-        Szukaj
-    </button>
-    <input id="searchbox" placeholder="Wyszukaj" onkeydown = "if (event.keyCode == 13)
-    document.getElementById('search').click()">
-    
-    <div class="formularz">
-        <form>
-            Imię</br>
-            <textarea id="name" type="text" name="imie"></textarea>
-            </br>
-            Nazwisko</br>
-            <textarea id="lastname" type="text" name="nazwisko"></textarea>
-            </br>
-            Wiek</br>
-            <input id="age" type="number" name="wiek"></input>
-            </br>
-            Płeć
-            <select id="gender">
-                <option value="Kobieta">Kobieta</option>
-                <option value="Mezczyzna">Mezczyzna</option>
+<body style="background: rgb(235, 234, 234);">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Customers</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#" id="showTable">Pokaż/Ukryj tabelę</a>
+                </li>
+                <li>
+                    <a href="#" id="AddCustomer" data-target="#form" data-toggle="modal">Dodaj nowego użytkownika</a>
+                </li>
+                <li>
+                    <input id="searchbox" class="form-control" placeholder="Wyszukaj" onkeydown="if (event.keyCode == 13) document.getElementById('search').click()">
+                </li>
+                <li>
+                    <button type="button" id="search" class="btn btn-default" data-toggle="modal" data-target="#searchResults">
+                        Szukaj
+                    </button>
+                </li>
+            </ul>
+    </nav>
 
-            </select>
-            </br>
-            <input id="but" class="btn btn-primary" type="button" value="Zapisz">
-            </br>
+    <div class="modal" id="form">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
-        </form>
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Dodaj użytkownika</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div id="formbody" class="modal-body">
+
+                    <form>
+                        Imię</br>
+                        <textarea id="name" type="text" name="imie"></textarea>
+                        </br>
+                        Nazwisko</br>
+                        <textarea id="lastname" type="text" name="nazwisko"></textarea>
+                        </br>
+                        Wiek</br>
+                        <input id="age" type="number" name="wiek" max="110"></input>
+                        </br>
+                        Płeć
+                        <select id="gender">
+                            <option value="Kobieta">Kobieta</option>
+                            <option value="Mezczyzna">Mezczyzna</option>
+
+                        </select>
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <input id="but" class="btn btn-primary" type="button" value="Zapisz">
+                </div>
+
+            </div>
+        </div>
     </div>
 
-
     <!-- The Modal -->
-    <div class="modal" id="myModal">
+    <div class="modal" id="searchResults">
         <div class="modal-dialog">
             <div class="modal-content">
 
@@ -59,7 +95,7 @@
                 </div>
 
                 <!-- Modal body -->
-                <div id="resultbody" class="modal-body" onkeydown = "if (event.keyCode == 13)
+                <div id="resultbody" class="modal-body" onkeydown="if (event.keyCode == 13)
                 document.getElementById('close').click()">
 
                 </div>
@@ -72,26 +108,77 @@
             </div>
         </div>
     </div>
-
-
-    <button id="toggleMe" class="btn btn-success">Pokaż/Ukryj tabelę</button>
+    <div id="left" class="col-span-8">
     <table id="tab" class="table table-bordered">
         <thead>
-            <th>Id <button class="btn btn-primary" type="button" id="SortByIdButton">&#8650;</button></th>
-            <th>Imię   <button class="btn btn-primary" type="button" id="SortByNameButton">&#8650;</button></th>
-            <th>Nazwisko <button  class="btn btn-primary" type="button" id="SortByLastNameButton">&#8650;</button></th>
+            <th>Id
+                <button class="btn btn-primary" type="button" id="SortByIdButton">&#8650;</button>
+            </th>
+            <th>Imię
+                <button class="btn btn-primary" type="button" id="SortByNameButton">&#8650;</button>
+            </th>
+            <th>Nazwisko
+                <button class="btn btn-primary" type="button" id="SortByLastNameButton">&#8650;</button>
+            </th>
             <th>Wiek</th>
             <th>Płeć</th>
             <th>Usuń</th>
             <th>Edytuj</th>
-            <th>Zapisz</th>
-
+    
         </thead>
         <tbody id="tbody">
 
         </tbody>
-    </table>
+    </table><button id="pageBack">prev</button> <input id="pageNumber" readonly> <button id="pageNext">next</button> </div>
+    <div class="pagination">
+    
+</div>
 
+    <div class="modal" id="formEdit">
+            <div class="modal-dialog">
+                <div class="modal-content">
+    
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edytuj dane użytkownika</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+    
+                    <!-- Modal body -->
+                    <div id="formEditBody" class="modal-body">
+    
+                        <form>
+                            Imię</br>
+                            <textarea id="nameEdit" type="text" name="imie"></textarea>
+                            </br>
+                            Nazwisko</br>
+                            <textarea id="lastnameEdit" type="text" name="nazwisko"></textarea>
+                            </br>
+                            Wiek</br>
+                            <input id="ageEdit" type="number" name="wiek" max="110"></input>
+                            </br>
+                            <br>
+                            Płeć
+                            <select id="genderEdit">
+                                <option value="Kobieta">Kobieta</option>
+                                <option value="Mezczyzna">Mezczyzna</option>
+    
+                            </select>
+                        </form>
+                    </div>
+    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button class="saveEdited" type="button">Zapisz</button>
+                        <button type="button" id="close" class="saveEdited" data-dismiss="modal">Zamknij</button>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+       
+    <img id="ad" src="ad.jpg">
+        
 </body>
 
 </html>
