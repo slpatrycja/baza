@@ -113,10 +113,11 @@ function Main() {
                 var plec = document.createTextNode(tabObj[i].plec);
 
                 makeRow(id, imie, nazwisko, wiek, plec, btnDel, btnEdit);
+                addId = tabObj[tabObj.length - 1].id;
+                return addId;
+                return pageNumber;
             }
-            addId = tabObj[tabObj.length - 1].id;
-            return addId;
-            return pageNumber;
+           
         }
     }
     function nextPage(){

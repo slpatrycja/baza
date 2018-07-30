@@ -3,7 +3,7 @@ $("document").ready(function(){
     $("#showTable").on("click", ShowTable);
 
     function ShowTable(){
-        $("#tab").toggle("fast","linear");
+        $("#tab").fadeIn();
         $("#pageNumber, #pageBack, #pageNext").toggle();
         
     }
